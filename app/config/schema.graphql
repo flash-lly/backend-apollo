@@ -1,0 +1,7 @@
+type Query {
+  default: String!
+}
+
+type Subscription {
+  notificationAdded: String!
+}
