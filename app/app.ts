@@ -37,7 +37,7 @@ export const initApp = async () => {
   const { apolloServer, httpServer } = creteApolloServer(app);
   await apolloServer.start();
   //TODO: replace cors values with config ones just after tests
-  app.use('/graphql', cors({ origin: true }), expressMiddleware(apolloServer));
+  app.use('/graphql', cors(corsOptions), expressMiddleware(apolloServer));
 
   httpServer.listen(configEnv.PORT);
   console.log("server running on PORT :",configEnv.PORT)
